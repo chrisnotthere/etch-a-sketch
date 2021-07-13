@@ -1,26 +1,27 @@
+body{
+    background-color: rgb(142, 220, 223);
+}
 
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    margin: 50px auto;
+    margin: 20px auto;
     width: 750px;
-    border: 3px dotted rgb(255, 255, 0);
+    border: 3px solid rgb(255, 255, 0);
     background-color: rgb(235, 45, 45);
     border-radius: 50px;
-
 }
 
 .title{
     color: orange;
     font-family: 'Satisfy', 'Arial Narrow', Arial, sans-serif;
     font-size: 18pt;
-
     display: flex;
     flex-direction: column;
     width: 100%;
     text-align: center;
+    text-shadow: 2pt 2pt black;
 }
 
 .grid{
@@ -29,15 +30,11 @@
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    /* box-sizing: border-box; */
-    width: 600px;
-    height: 600px;
-
+    width: 550px;
+    height: 550px;
 }
 
 .cell{
-    /* padding: 1em; */
-    /* margin: 1em; */
     border: 1px solid gray;
     text-align: center;
     background-color: #ffffff;
@@ -46,67 +43,63 @@
 .controls{
     display: flex;
     flex-direction: row;
-    /* flex-wrap: nowrap; */
     justify-content: space-between;
     margin: 1em;
     padding: 1em;
-    border: 3px solid blue;
-    /* box-sizing: border-box; */
     width: 60%;
+}
 
+.grid-colors{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: orange;
+    text-shadow: 2pt 2pt black;
+    margin-top: -50px;
+    margin-right: -40px;
+    text-align: center;
+    font-family: 'Otomanopee One', sans-serif;
+    font-size: 12pt;
 }
 
 #clear-btn{
-    /* text-decoration: none; */
     font-family: Arial, Helvetica, sans-serif;
     transition: 0.4s;
     padding: .5em;
     margin-bottom: 1em;
     margin-top: -1.5em;
     border-radius: 25px;
-
     position: relative;
     width: 100px;
-    left: 10%;
-
+    left: 15%;
     background-color: orange;
     color: black;
     border-color: black;
-    
-}
-
-#clear-btn:hover{
-
-    background-color: rgb(255, 179, 37);
-    border-color: rgb(90, 87, 87);
-    /* color: black; */
-
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 5px 20px 0 rgba(0,0,0,0.19);
-
 }
 
 #grid-btn{
-
     font-family: Arial, Helvetica, sans-serif;
     transition: 0.4s;
     padding: .5em;
     border-radius: 25px;
-
-    /* position: absolute; */
     width: 120px;
-    /* left: 10%; */
-
+    margin-top: 10px;
     background-color: orange;
     color: black;
     border-color: black;
-
-
 }
 
-#grid-btn:hover{
+#clear-btn:hover, #grid-btn:hover, #black-btn:hover, #rainbow-btn:hover, #grey-scale-btn:hover{
     background-color: rgb(255, 179, 37);
     border-color: rgb(90, 87, 87);
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 5px 20px 0 rgba(0,0,0,0.19);
-
 }
 
+#black-btn, #rainbow-btn, #grey-scale-btn{
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.4s;
+    padding: .5em;
+    border-radius: 25px;
+    width: 100px;
+    background-color: orange;
+    color: black;
+    border-color: black;
+}

@@ -10,12 +10,9 @@ const rainbowHoverBtn = document.querySelector("#rainbow-btn").addEventListener(
 const greyScaleHoverBtn = document.querySelector("#grey-scale-btn").addEventListener("click", setHoverGreyScale);
 
 
-
 //create default grid
 makeGrid(16);
 
-
-//make grid function
 function makeGrid(size){
 
     clearGrid();
@@ -36,38 +33,18 @@ function makeGrid(size){
 
 }
 
-
 function clearGrid(){
 
     grid.innerHTML = "";
-
 }
 
 
-
-
-
-//// EVENT LISTENERS ////
-
-
-
-
-
-
-
-//clear btn event
 function clearCells(){
-
-    const cells = document.querySelectorAll('.cell');
-
-    cells.forEach(element => {
-        element.style.backgroundColor = 'white';
-    });
+    //reload page
+    location.reload();
 
 }
 
-
-//user set grid size
 function setGrid(){
 
     const size = prompt("enter grid size", "4-64")
@@ -76,9 +53,8 @@ function setGrid(){
         alert('valid range is 4-64')
         return;
     }
-    
-    makeGrid(size);
 
+    makeGrid(size);
 }
 
 function setHoverBlack(){
@@ -91,7 +67,6 @@ function setHoverBlack(){
 
         element.addEventListener("mouseover", hoverBlack);
     });
-
 }
 
 function hoverBlack(e){
@@ -110,7 +85,6 @@ function setHoverRainbow(){
 
         element.addEventListener("mouseover", hoverRainbow);
     });
-
 }
 
 function hoverRainbow(e){
@@ -119,7 +93,6 @@ function hoverRainbow(e){
 
     e.target.style.setProperty("background-color", randomColor)
 }
-
 
 function setHoverGreyScale(){
 
@@ -130,30 +103,16 @@ function setHoverGreyScale(){
         element.removeEventListener("mouseover", hoverBlack);
         element.removeEventListener("mouseover", hoverRainbow);
 
-        //custom attribute to help darken bgcolor
-        element.setAttribute("data-red", "255");
-        element.setAttribute("data-green", "255");
-        element.setAttribute("data-blue", "255");
-
+        //custom attribute to help darken cell bgcolor
+        element.setAttribute("data-color", "225");
         element.addEventListener("mouseover", hoverGreyScale);
     });
-
 }
-
-
 
 function hoverGreyScale(e){
 
-    let red = e.target.dataset.red;
-    let green = e.target.dataset.green;
-    let blue = e.target.dataset.blue;
+    let color = e.target.dataset.color;
 
-    e.target.style.setProperty("background-color", `rgb(${red},${green},${blue})`);
-
-    e.target.dataset.red -= 50;
-    e.target.dataset.green -= 50;
-    e.target.dataset.blue -= 50;
-
+    e.target.style.setProperty("background-color", `rgb(${color},${color},${color})`);
+    e.target.dataset.color -= 50;
 }
-
-
